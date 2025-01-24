@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public GameObject player;   // Referencia al jugador
+    public float rotationSpeed = 50.0f; // Velocidad de rotación
+    private Vector3 offset;    // Distancia inicial entre la cámara y el jugador
 
-    public GameObject player;
-    private Vector3 offset;
-
-    // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - player.transform.position; 
+        offset = transform.position - player.transform.position;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset; 
+        // Rotación automática alrededor del jugador
+        Quaternion camTurnAngle = Quaternion.AngleAxis(rotationSpeed * Time.deltaTime, Vector3.up); // Rotar alrededor del eje Y
+        offset = camTurnAngle * offset; // Aplicar la rotación al offset
+
+        // Actualizar posición de la cámara
+        transform.position = player.transform.position + offset;
+
+        // Mirar siempre hacia el jugador
+        transform.LookAt(player.transform.position);
     }
 }
