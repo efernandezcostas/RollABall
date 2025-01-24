@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject player;   // Referencia al jugador
-    public float rotationSpeed = 50.0f; // Velocidad de rotación
+    public float rotationSpeed = 0f; // Velocidad de rotación
     private Vector3 offset;    // Distancia inicial entre la cámara y el jugador
 
     void Start()
