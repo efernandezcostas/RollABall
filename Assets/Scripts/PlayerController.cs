@@ -12,7 +12,7 @@ private int count;
 private float movementX;
 private float movementY;
 
-public float speed = 0; 
+public float speed = 15f; 
 public TextMeshProUGUI countText;
 public GameObject winTextObject;
 
@@ -43,8 +43,8 @@ public GameObject winTextObject;
 
    private void FixedUpdate() 
    {
-      Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
-      rb.AddForce(movement * speed); 
+      Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+      rb.AddForce(movement * speed, ForceMode.Acceleration);
    }
 
    void OnTriggerEnter(Collider other) 
