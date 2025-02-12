@@ -1,5 +1,12 @@
 # Roll A Ball
 ## Mapa
+| Mapa             | Imágen                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| 1 | <img src="https://github.com/user-attachments/assets/9b7faa81-cc9c-4ab4-ad1f-3d02245512fe" width="400">|
+| 2 | <img src="https://github.com/user-attachments/assets/2bbb4628-f301-46ad-b5a9-a491e5a6b03b" width="400">|
+| 3 |  |
+
+
 
 ## Jugador
 Eres una pelota. Tu objetivo es rodar y saltar por los diferentes mapas capturando los objetos amarillos mientras intentas evitar que los enemigos te capturen.
@@ -15,11 +22,11 @@ Los enemigos te perseguirán, tu misión es evitarlos. Tiene áreas limitadas y 
 ### Cámaras
 Se han creado diferentes cámaras, siendo una en primera persona y otra en tercera persona, cada una con sus características.
 
-- **Primera persona**  
+- ***Primera persona***
 
 Tiene un POV más alto para poder ver mejor lo que hay alrededor, además esta cámara permite mirar alrededor con las teclas del teclado.
 
-- **Tercera persona**
+- ***Tercera persona***
 
 Tiene un POV más bajo para que no sea molesto y permite ver mejor todo el mapa para saber qué hacer a continuación.
 
