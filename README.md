@@ -2,9 +2,8 @@
 ## Mapa
 |   |                                                                                                        |   |            |
 | - | ------------------------------------------------------------------------------------------------------ | - | ---------- |
-| 1 | <img src="https://github.com/user-attachments/assets/9b7faa81-cc9c-4ab4-ad1f-3d02245512fe" width="400">| 3 | Por añadir |
-| 2 | <img src="https://github.com/user-attachments/assets/2bbb4628-f301-46ad-b5a9-a491e5a6b03b" width="400">| 4 | Por añadir |
-
+| 1 | <img src="https://github.com/user-attachments/assets/1c476b76-7828-4d6f-b796-1d3e4becb5b7" height="400" width="400">| 2 | <img src="https://github.com/user-attachments/assets/5ea9154c-0c20-47c8-9076-a4528fb7ee8d" height="400" width="400"> |
+| 3 | <img src="https://github.com/user-attachments/assets/0280c7b5-8ece-4a9d-a65a-018543d34b9d" height="400" width="400">| 4 | Por añadir |
 
 ## Jugador
 Eres una pelota. Tu objetivo es rodar y saltar por los diferentes mapas capturando los objetos amarillos mientras intentas evitar que los enemigos te capturen.
