@@ -2,6 +2,9 @@
 ## Mapa
 
 ## Jugador
+Eres una pelota. Tu objetivo es rodar y saltar por los diferentes mapas capturando los objetos amarillos mientras intentas evitar que los enemigos te capturen.
+![player-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/de4405ae-9d78-4270-8a5b-026a090727dc)
+
 
 ## Enemigos
 Los enemigos te perseguirán, tu misión es evitarlos. Tiene áreas limitadas y puedes evadirlo utilizando otros de los recursos, como el salto o el ramp boost.
@@ -32,5 +35,7 @@ Algunas rampas te acelerarán para que saltes mucho más. Puedes utilizarlas par
 ## Extras
 ### Salto
 Añadido el salto para crear nuevos y diferentes desafíos, con la posibilidad de escalar o saltar barreras.
+![saltoMp4-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a4014e58-e1fd-403b-8633-d85f6353a2d0)
 
 ### Texturas / Skins
+Diferentes colores y texturas para diferenciar los niveles entre sí.
