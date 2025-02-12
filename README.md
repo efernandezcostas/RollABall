@@ -1,10 +1,10 @@
 # Roll A Ball
 ## Mapa
-| Mapa             | Imágen                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| 1 | <img src="https://github.com/user-attachments/assets/9b7faa81-cc9c-4ab4-ad1f-3d02245512fe" width="400">|
-| 2 | <img src="https://github.com/user-attachments/assets/2bbb4628-f301-46ad-b5a9-a491e5a6b03b" width="400">|
-| 3 |  |
+|              |                                                                 |  |  |
+| ----------------- | ------------------------------------------------------------------ | ------ | ------ |
+| 1 | <img src="https://github.com/user-attachments/assets/9b7faa81-cc9c-4ab4-ad1f-3d02245512fe" width="400">| 3 | Por añadir |
+| 2 | <img src="https://github.com/user-attachments/assets/2bbb4628-f301-46ad-b5a9-a491e5a6b03b" width="400">| 4 | Por añadir |
+
 
 
 
