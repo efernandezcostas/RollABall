@@ -37,7 +37,8 @@ Algunas rampas te acelerarán para que saltes mucho más. Puedes utilizarlas par
 ![rampBoostMp4-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3043c020-fed2-49a2-b53e-2e7e50f50fe0)
 
 ### Estados
-El jugador se vuelve invulnerable durante 3 segundos cuando consigue coger 5 elementos. Para conseguir esto incluyo una **Corutina** que se ejecuta durante 3 segundos.
+El jugador se vuelve invulnerable durante 3 segundos cuando consigue coger 5 elementos. Para conseguir esto incluyo una **Corutina** que se ejecuta durante 3 segundos, además, mientras el jugador es invulnerable cambiará su color a violeta para que sea visual su estado.
+
 ![invulnerable-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1fcfc703-ffcb-4412-8672-52887d3929ac)
 
 
