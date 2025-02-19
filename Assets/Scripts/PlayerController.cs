@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -12,20 +10,30 @@ public class PlayerController : MonoBehaviour
    private float movementX;
    private float movementY;
    private bool isGrounded;
+   private bool isInvulnerable = false;
 
    public float speed = 15f; 
-   public float jumpForce = 10f; // Fuerza del salto
+   public float jumpForce = 10f;
    public TextMeshProUGUI countText;
    public GameObject winTextObject;
-   public float rampBoostMultiplier = 5f; // Multiplicador de velocidad al tocar la cuesta
+   public float rampBoostMultiplier = 5f;
 
    private enum PlayerState { moving, jumping, invulnerable }
    private PlayerState currentState;
+
+   public Material normalMaterial;   // Material normal
+   public Material invincibleMaterial;
+
+   private Renderer playerRenderer;
+   private Animator animator;
 
    void Start()
    {
       rb = GetComponent<Rigidbody>();
       count = 0; 
+      playerRenderer = GetComponent<Renderer>(); // Obtiene el renderer del objeto
+      animator = GetComponent<Animator>(); // Obtiene el Animator
+      playerRenderer.material = normalMaterial; // Establece el material inicial
       SetCountText();
       winTextObject.SetActive(false);
    }
@@ -48,7 +56,7 @@ public class PlayerController : MonoBehaviour
    
    void SetCountText() 
    {
-      countText.text =  "Count: " + count.ToString();
+      countText.text = "Count: " + count.ToString();
       if (count >= 10)
       {
          winTextObject.SetActive(true);
@@ -67,27 +75,48 @@ public class PlayerController : MonoBehaviour
       if (other.gameObject.CompareTag("PickUp")) 
       {
          other.gameObject.SetActive(false);
-         count = count + 1;
+         count++;
+
+         // Verificar si ha recogido 5 objetos
+         if (count % 5 == 0)
+         {
+            StartCoroutine(BecomeInvulnerable());
+         }
+
          SetCountText();
       }
-   
+   }
+
+   private IEnumerator BecomeInvulnerable()
+   {
+      isInvulnerable = true;
+      currentState = PlayerState.invulnerable;
+      playerRenderer.material = invincibleMaterial; // Cambia el material
+      animator.SetBool("itemInvencible", true); // Activa animación de invulnerabilidad
+
+      yield return new WaitForSeconds(3f);
+
+      isInvulnerable = false;
+      currentState = PlayerState.moving;
+      playerRenderer.material = normalMaterial; // Vuelve al material normal
+      animator.SetBool("itemInvencible", false); // Desactiva animación
    }
 
    private void OnCollisionEnter(Collision collision)
    {
       if (collision.gameObject.CompareTag("Enemy"))
       {
-         // Destroy the current object
-         Destroy(gameObject); 
-         // Update the winText to display "You Lose!"
-         winTextObject.gameObject.SetActive(true);
-         winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+         if (!isInvulnerable)
+         {
+            Destroy(gameObject); 
+            winTextObject.SetActive(true);
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+         }
       }
       else if (collision.gameObject.CompareTag("Ramp"))
       {
-            // Aplica un impulso adicional al jugador al tocar la cuesta
-            Vector3 boost = new Vector3(movementX, 0.0f, movementY) * rampBoostMultiplier;
-            rb.AddForce(boost, ForceMode.Impulse);
+         Vector3 boost = new Vector3(movementX, 0.0f, movementY) * rampBoostMultiplier;
+         rb.AddForce(boost, ForceMode.Impulse);
       }
       else if (collision.gameObject.CompareTag("Ground"))
       {
