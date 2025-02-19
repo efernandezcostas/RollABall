@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
    private float movementY;
    private bool isGrounded;
    private bool isInvulnerable = false;
+   private Transform playerTransform;
 
    public float speed = 15f; 
    public float jumpForce = 10f;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
       playerRenderer = GetComponent<Renderer>(); // Obtiene el renderer del objeto
       animator = GetComponent<Animator>(); // Obtiene el Animator
       playerRenderer.material = normalMaterial; // Establece el material inicial
+      playerTransform = GetComponent<Transform>();
       SetCountText();
       winTextObject.SetActive(false);
    }
@@ -68,6 +70,22 @@ public class PlayerController : MonoBehaviour
    {
       Vector3 movement = new Vector3(movementX, 0.0f, movementY);
       rb.AddForce(movement * speed);
+
+      Vector3 dir = Vector3.zero;
+      int accelSpeed = 5;
+
+      dir.x = Input.acceleration.x; // Adjusted to match expected behavior
+      dir.z = Input.acceleration.y; // Adjusted to match expected behavior
+
+      // Clamp acceleration vector to unit sphere
+      if (dir.sqrMagnitude > 1)
+            dir.Normalize();
+
+      // Make it move 10 meters per second instead of 10 meters per frame...
+      dir *= Time.deltaTime;
+
+      // Move object
+      playerTransform.Translate(dir * accelSpeed, Space.World);
    }
 
    void OnTriggerEnter(Collider other) 
