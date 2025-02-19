@@ -3,7 +3,7 @@
 |   |                                                                                                        |   |            |
 | - | ------------------------------------------------------------------------------------------------------ | - | ---------- |
 | 1 | <img src="https://github.com/user-attachments/assets/1c476b76-7828-4d6f-b796-1d3e4becb5b7" height="400" width="400">| 2 | <img src="https://github.com/user-attachments/assets/5ea9154c-0c20-47c8-9076-a4528fb7ee8d" height="400" width="400"> |
-| 3 | <img src="https://github.com/user-attachments/assets/0280c7b5-8ece-4a9d-a65a-018543d34b9d" height="400" width="400">| 4 | Por añadir |
+| 3 | <img src="https://github.com/user-attachments/assets/0280c7b5-8ece-4a9d-a65a-018543d34b9d" height="400" width="400">| 4 | En un futuro |
 
 ## Jugador
 Eres una pelota. Tu objetivo es rodar y saltar por los diferentes mapas capturando los objetos amarillos mientras intentas evitar que los enemigos te capturen.
@@ -37,6 +37,9 @@ Algunas rampas te acelerarán para que saltes mucho más. Puedes utilizarlas par
 ![rampBoostMp4-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3043c020-fed2-49a2-b53e-2e7e50f50fe0)
 
 ### Estados
+El jugador se vuelve invulnerable durante 3 segundos cuando consigue coger 5 elementos. Para conseguir esto incluyo una **Corutina** que se ejecuta durante 3 segundos.
+![invulnerable-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/1fcfc703-ffcb-4412-8672-52887d3929ac)
+
 
 ## Extras
 ### Salto
@@ -45,3 +48,7 @@ Añadido el salto para crear nuevos y diferentes desafíos, con la posibilidad d
 
 ### Texturas / Skins
 Diferentes colores y texturas para diferenciar los niveles entre sí.
+
+# Notas
+* No todos los gifs son de la versión final, por lo que pueden aparecer mapas o elementos desactualizados.
+* Me centré principalmente en los scripts. No me centré en la estética o los desafíos que se incluyen desde el propio hub.
